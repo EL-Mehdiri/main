@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><input id="euro" type="number" placeholder="Euros" /> : EUR</p>
+
+    <p><input id="dirham" type="number" placeholder="Dirhams" /> : MAD</p>
+    <script src="main.js"></script>
+    <h1>Calcul du périmètre et de l'aire d'un carré</h1>
+
+    <label for="sideLength">Longueur du côté :</label>
+    <input type="number" id="sideLength" name="sideLength" min="0">
+
+    <button onclick="calculate()">Calculer</button>
+
+    <h2>Résultats :</h2>
+    <p id="perimeterResult"></p>
+    <p id="areaResult"></p>
+
+    <script>
+        function calculate() {
+            var sideLength = parseFloat(document.getElementById("sideLength").value);
+            var perimeter = 4 * sideLength;
+            var area = sideLength * sideLength;
+            document.getElementById("perimeterResult").textContent = "Périmètre : " + perimeter;
+            document.getElementById("areaResult").textContent = "Aire : " + area;
+        }
+    </script>
+    <h1>Conversion d'une durée en heures, minutes et secondes en secondes</h1>
+
+    <label for="hours">Heures :</label>
+    <input type="number" id="hours" name="hours" min="0">
+
+    <label for="minutes">Minutes :</label>
+    <input type="number" id="minutes" name="minutes" min="0">
+
+    <label for="seconds">Secondes :</label>
+    <input type="number" id="seconds" name="seconds" min="0">
+
+    <button onclick="convertToSeconds()">Convertir</button>
+
+    <h2>Résultat :</h2>
+    <p id="result"></p>
+
+    <script>
+        function convertToSeconds() {
+            // Récupérer les valeurs des heures, minutes et secondes
+            var hours = parseInt(document.getElementById("hours").value);
+            var minutes = parseInt(document.getElementById("minutes").value);
+            var seconds = parseInt(document.getElementById("seconds").value);
+
+            // Calculer la durée totale en secondes
+            var totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+
+            // Afficher le résultat
+            document.getElementById("result").textContent = "Durée totale en secondes : " + totalSeconds;
+        }
+    </script>
+</body>
+
+</html>
